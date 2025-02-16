@@ -12,7 +12,7 @@ Inject or Instantiate ThereforeService (Therefore.API/Services/) with the follow
   
 Call `ThereforeService.Method(RequestType request)`
 
-Will return an ApiResponse with the following:
+Will return an ApiResponse (Http/ApiResponse.cs) with the following:
 - IsSuccess - if the call succeeded (200 response)
 - Data - The response data of type T (from Http/Responses)
 - ErrorMessage - Any error message returned from the server if an error occurred
