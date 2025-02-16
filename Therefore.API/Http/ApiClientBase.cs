@@ -5,6 +5,7 @@ using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using Therefore.API.Constants;
+using Newtonsoft.Json;
 
 namespace Therefore.API.Http
 {
@@ -58,8 +59,8 @@ namespace Therefore.API.Http
                     string errorMessage = await response.Content.ReadAsStringAsync();
                     return ApiResponse<TResponse>.Failure($"HTTP {response.StatusCode}: {errorMessage}");
                 }
-
-                var responseData = await response.Content.ReadFromJsonAsync<TResponse>();
+                var responseString = await response.Content.ReadAsStringAsync();
+                var responseData = JsonConvert.DeserializeObject<TResponse>(responseString);
                 return responseData != null
                     ? ApiResponse<TResponse>.Success(responseData)
                     : ApiResponse<TResponse>.Failure("Response was empty.");
@@ -77,15 +78,16 @@ namespace Therefore.API.Http
         {
             try
             {
-                HttpResponseMessage response = await _httpClient.PostAsJsonAsync(endpoint, request);
-
+                string json = JsonConvert.SerializeObject(request);
+                StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+                HttpResponseMessage response = await _httpClient.PostAsync(endpoint, content);
                 if (!response.IsSuccessStatusCode)
                 {
                     string errorMessage = await response.Content.ReadAsStringAsync();
                     return ApiResponse<TResponse>.Failure($"HTTP {response.StatusCode}: {errorMessage}");
                 }
-
-                var responseData = await response.Content.ReadFromJsonAsync<TResponse>();
+                var responseString = await response.Content.ReadAsStringAsync();
+                var responseData = JsonConvert.DeserializeObject<TResponse>(responseString);
                 return responseData != null
                     ? ApiResponse<TResponse>.Success(responseData)
                     : ApiResponse<TResponse>.Failure("Response was empty.");

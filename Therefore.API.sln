@@ -5,6 +5,8 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Therefore.API", "Therefore.API\Therefore.API.csproj", "{88CA2908-8D0C-4E03-A30B-61AAD6003064}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThereforeClientTest", "ThereforeClientTest\ThereforeClientTest.csproj", "{A0ACF784-947A-40C8-985F-78B1C858C4FF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{88CA2908-8D0C-4E03-A30B-61AAD6003064}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88CA2908-8D0C-4E03-A30B-61AAD6003064}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88CA2908-8D0C-4E03-A30B-61AAD6003064}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0ACF784-947A-40C8-985F-78B1C858C4FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0ACF784-947A-40C8-985F-78B1C858C4FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0ACF784-947A-40C8-985F-78B1C858C4FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0ACF784-947A-40C8-985F-78B1C858C4FF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

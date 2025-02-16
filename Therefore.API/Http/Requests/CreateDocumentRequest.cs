@@ -7,7 +7,7 @@ namespace Therefore.API.Http.Requests
         public long CategoryNo { get; set; }
         public string CheckInComments { get; set; }
         public List<IndexDataItem> IndexDataItems { get; set; }
-        public List<Stream> Streams { get; set; }
+        public List<Models.Stream> Streams { get; set; }
         public bool DoFillDependentFields { get; set; }
         public int WithAutoAppendMode { get; set; }
         public ConversionOptions ConversionOptions { get; set; }
